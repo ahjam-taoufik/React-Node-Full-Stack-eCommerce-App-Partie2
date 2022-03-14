@@ -1,12 +1,14 @@
 const express=require('express');
 const app = express();
+
 const mongoose=require('mongoose'); 
 const dotenv=require('dotenv');
-dotenv.config()
+
 
 const useRouter=require('./routes/user')
 const authRouter=require('./routes/auth')
 
+dotenv.config()
 
 mongoose.connect(
     process.env.MONGO_URL    
@@ -16,9 +18,9 @@ mongoose.connect(
     
     
     
-app.use(express.json())
+app.use(express.json())  
 app.use("/api/user",useRouter);
-app.use("/api/auth",authRouter);
+app.use("/api/auth",authRouter); 
 
 
 app.listen(process.env.PORT || 5000, ()=>{
