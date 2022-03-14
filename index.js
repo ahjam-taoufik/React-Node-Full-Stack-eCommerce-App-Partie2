@@ -2,9 +2,10 @@ const express=require('express');
 const app = express();
 const mongoose=require('mongoose'); 
 const dotenv=require('dotenv');
+dotenv.config()
+
 const useRouter=require('./routes/user')
 const authRouter=require('./routes/auth')
-dotenv.config()
 
 
 mongoose.connect(
