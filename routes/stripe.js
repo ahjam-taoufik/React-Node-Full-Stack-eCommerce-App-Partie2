@@ -33,7 +33,8 @@ router.post('/payment', async (req, res) => {
   const { id:customerId } = await stripe.customers
   .create({
       email: token.email,
-      source: token.id, })
+      source: token.id, 
+    })
   .catch(e => {
       console.log(e); 
       return null; }) 
